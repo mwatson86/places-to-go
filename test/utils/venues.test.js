@@ -68,12 +68,13 @@ describe('excluded venues', () => {
 
     const expected = {
       venue1: {
-        drinks: ['user1', 'user2'],
         food: ['user2']
       },
       venue2: {
-        drinks: ['user1', 'user2'],
         food: ['user1', 'user2']
+      },
+      venue3: {
+        drinks: ['user1', 'user2']
       }
     };
 

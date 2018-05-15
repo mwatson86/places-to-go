@@ -20,9 +20,9 @@ const excludeByFood = (attendees, initialValue = {}) => {
 const excludeByDrink = (attendees, initialValue = {}) => {
   return venues.reduce((accumulator, venue) => {
     attendees.forEach(attendee => {
-      const excluded = venue.drinks.every(item => attendee.drinks.indexOf(item) !== -1);
+      const included = venue.drinks.some(drink => attendee.drinks.indexOf(drink) !== -1);
 
-      if (excluded) {
+      if (!included) {
         accumulator[venue.name] = accumulator[venue.name] || {};
         accumulator[venue.name].drinks = accumulator[venue.name].drinks || [];
         accumulator[venue.name].drinks.push(attendee.name);
